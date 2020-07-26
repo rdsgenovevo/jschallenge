@@ -13,10 +13,22 @@
     
   <input type="submit" value="Search" onclick="search(document.getElementById('bname').value)">
 
-<p>Click "Search" to search for beer name.</p>
+<p>Click "Search" to search for beer by name.</p>
     
 <p>Results:</p>
-<p id="result"></p>
+<p id="result1"></p>
+    
+//-----------------------// <br><br>
+    
+<label for="fname">Food:</label>
+  <input type="text" id="fname" name="fname"><br><br>
+    
+  <input type="submit" value="Search" onclick="searchByFood(document.getElementById('fname').value)">
+
+<p>Click "Search" to search for beer by supplied food.</p>
+    
+<p>Results:</p>
+<p id="result2"></p>
 
 </body>
 </html>
