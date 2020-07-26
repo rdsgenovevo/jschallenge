@@ -11,17 +11,45 @@ function search(beer) {
       success: function(response) {
           console.log(response);
           
-          $("#result").empty();
+          $("#result1").empty();
           
           $.each( response, function( key, value ) {
-               $("#result").append("<br />"+key + ": " + value.name);
+               $("#result1").append("<br />"+key + ": " + value.name);
             });
           
       },
       error: function(xhr) {
         console.log("error");
           
-        $("#result").empty();
+        $("#result1").empty();
+      }
+    });
+  }
+
+function searchByFood(food) {
+    food=food.replace(/\s+/g,"_");
+    var url = "https://api.punkapi.com/v2/beers";
+
+    $.ajax({
+      url: url,
+      type: "get",
+      data: { 
+        food: food
+      },
+      success: function(response) {
+          console.log(response);
+          
+          $("#result2").empty();
+          
+          $.each( response, function( key, value ) {
+               $("#result2").append("<br />"+key + ": " + value.name);
+            });
+          
+      },
+      error: function(xhr) {
+        console.log("error");
+          
+        $("#result2").empty();
       }
     });
   }
