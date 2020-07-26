@@ -6,9 +6,9 @@
 </head>
 <body>
 
-<h1>Search Beer</h1>
+<h1>Search Beer in PunkAPI</h1>
 
-  <label for="fname">Name:</label>
+  <label for="bname">Name:</label>
   <input type="text" id="bname" name="bname"><br><br>
     
   <input type="submit" value="Search" onclick="search(document.getElementById('bname').value)">
@@ -29,6 +29,18 @@
     
 <p>Results:</p>
 <p id="result2"></p>
+    
+//-----------------------// <br><br>
+    
+<label for="dname">Date (MM-YYYY):</label>
+  <input type="text" id="dname" name="dname"><br><br>
+    
+  <input type="submit" value="Search" onclick="searchByDate(document.getElementById('dname').value)">
+
+<p>Click "Search" to search for beer brewd before a certain date.</p>
+    
+<p>Results:</p>
+<p id="result3"></p>
 
 </body>
 </html>
