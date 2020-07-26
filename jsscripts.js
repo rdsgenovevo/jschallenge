@@ -53,3 +53,30 @@ function searchByFood(food) {
       }
     });
   }
+
+function searchByDate(date) {
+    var url = "https://api.punkapi.com/v2/beers";
+
+    $.ajax({
+      url: url,
+      type: "get",
+      data: { 
+        brewed_before: date
+      },
+      success: function(response) {
+          console.log(response);
+          
+          $("#result3").empty();
+          
+          $.each( response, function( key, value ) {
+               $("#result3").append("<br />"+key + ": " + value.name);
+            });
+          
+      },
+      error: function(xhr) {
+        console.log("error");
+          
+        $("#result3").empty();
+      }
+    });
+  }
