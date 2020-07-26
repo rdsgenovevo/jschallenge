@@ -11,7 +11,7 @@
   <label for="bname">Name:</label>
   <input type="text" id="bname" name="bname"><br><br>
     
-  <input type="submit" value="Search" onclick="search(document.getElementById('bname').value)">
+  <input type="submit" value="Search" onclick="search(document.getElementById('bname').value, 'name')">
 
 <p>Click "Search" to search for beer by name.</p>
     
@@ -23,7 +23,7 @@
 <label for="fname">Food:</label>
   <input type="text" id="fname" name="fname"><br><br>
     
-  <input type="submit" value="Search" onclick="searchByFood(document.getElementById('fname').value)">
+  <input type="submit" value="Search" onclick="search(document.getElementById('fname').value, 'food')">
 
 <p>Click "Search" to search for beer by supplied food.</p>
     
@@ -35,7 +35,7 @@
 <label for="dname">Date (MM-YYYY):</label>
   <input type="text" id="dname" name="dname"><br><br>
     
-  <input type="submit" value="Search" onclick="searchByDate(document.getElementById('dname').value)">
+  <input type="submit" value="Search" onclick="search(document.getElementById('dname').value, 'date')">
 
 <p>Click "Search" to search for beer brewd before a certain date.</p>
     
