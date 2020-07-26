@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+
+<h1>Search Beer</h1>
+
+  <label for="fname">Name:</label>
+  <input type="text" id="bname" name="bname"><br><br>
+    
+  <input type="submit" value="Search" onclick="search(document.getElementById('bname').value)">
+
+<p>Click "Search" to search for beer name.</p>
+    
+<p>Results:</p>
+<p id="result"></p>
+    
+
+<script>
+  function search(beer) {
+    beer=beer.replace(/\s+/g,"_");
+    var url = "https://api.punkapi.com/v2/beers";
+
+    $.ajax({
+      url: url,
+      type: "get",
+      data: { 
+        beer_name: beer
+      },
+      success: function(response) {
+          console.log(response);
+          
+          $("#result").empty();
+          
+          $.each( response, function( key, value ) {
+               $("#result").append("<br />"+key + ": " + value.name);
+            });
+          
+      },
+      error: function(xhr) {
+        console.log("error");
+          
+        $("#result").empty();
+      }
+    });
+  }
+</script>
+
+</body>
+</html>
